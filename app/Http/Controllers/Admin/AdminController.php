@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -40,4 +41,10 @@ class AdminController extends Controller
     {
         return view('admin.profile.index');
     }
+
+    public function userProfile(User $user)
+    {
+        return view('admin.user.edit', compact('user'));
+    }
+
 }

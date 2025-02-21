@@ -17,7 +17,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <?php echo $__env->yieldContent('customCss'); ?>
 
 </head>
@@ -57,8 +57,11 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo e(asset('assets/admin/dist/js/pages/dashboard2.js')); ?>"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/aa02fbbfef.js" crossorigin="anonymous"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
+<script src="<?php echo e(asset('assets/admin/custom/js/custom.js')); ?>"></script>
 <?php echo $__env->yieldContent('customJs'); ?>
 </body>
 </html>

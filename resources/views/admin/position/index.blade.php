@@ -52,7 +52,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="text-center">
-                                                <h2><b>{{$position->name}}</b></h2>
+                                                <h2><b>{{$position->position_name}}</b></h2>
                                             </div>
 
                                         </div>
@@ -71,13 +71,7 @@
                         @endforeach
                     </div>
                 </div>
-                <!-- /.card-body -->
-                {{--                <div class="card-footer">--}}
-                {{--                    <nav aria-label="Page Navigation">--}}
-                {{--                        @include('components.pagination', ['paginator' => $positions])--}}
-                {{--                    </nav>--}}
-                {{--                </div>--}}
-                <!-- /.card-footer -->
+
             </div>
             <!-- /.card -->
             <div class="modal fade" id="newPositionModal" tabindex="-1" aria-labelledby="newPositionModalLabel"
@@ -96,19 +90,22 @@
                                 <div class="row">
                                     <div class="col-md-10 m-auto">
                                         <div class="form-group my-3">
-                                            <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                                   id="name"
-                                                   name="name"
-                                                   value="{{ old('name') }}"
+                                            <input type="text"
+                                                   class="form-control @error('position_name') is-invalid @enderror"
+                                                   id="position_name"
+                                                   name="position_name"
+                                                   value="{{ old('position_name') }}"
                                                    required>
-                                            @error('name')
+                                            @error('position_name')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
 
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100">YARAT</button>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">YARAT</button>
+                                </div>
                             </form>
                         </div>
                     </div>

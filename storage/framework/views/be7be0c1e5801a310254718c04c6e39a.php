@@ -3,21 +3,24 @@
     <div class="brand-link">
         <img src="<?php echo e(asset('assets/admin/dist/img/AdminLTELogo.png')); ?>" alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light p-4">ADMİN PANEL</span>
-
-
+        <span class="brand-text font-weight-light px-3">ADMİN PANEL</span>
     </div>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src=" " class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                <span href="#" class="d-block">AD SOYAD</span>
-            </div>
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex justify-content-start">
+            <?php if(isset($loginUser->avatar)): ?>
+                <div class="image">
+                    <img src="<?php echo e(Storage::url($loginUser->avatar)); ?>" class="img-circle elevation-2"
+                         style="width: 35px; height: 35px; object-fit: cover;" alt="User Image">
+                </div>
+            <?php endif; ?>
+            <?php if(isset($loginUser)): ?>
+                <div class="info">
+                    <span class="d-block text-white"><?php echo e($loginUser->name); ?></span>
+                </div>
+            <?php endif; ?>
 
         </div>
 
@@ -78,14 +81,15 @@
                             <span class="nav-link-text ms-1">Adminlər</span>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link <?php echo e(\App\Helpers\Helper::isActiveMenu(route('admin.position'))); ?> "
+                           href="<?php echo e(route('admin.position')); ?>">
+                            <i class="fa-regular fa-circle-user h5 px-2"></i>
+                            <span class="nav-link-text ms-1">Vəzifələr</span>
+                        </a>
+                    </li>
                 <?php endif; ?>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo e(\App\Helpers\Helper::isActiveMenu(route('admin.position'))); ?> "
-                       href="<?php echo e(route('admin.position')); ?>">
-                        <i class="fa-regular fa-circle-user h5 px-2"></i>
-                        <span class="nav-link-text ms-1">Vəzifələr</span>
-                    </a>
-                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo e(route('logout')); ?>">

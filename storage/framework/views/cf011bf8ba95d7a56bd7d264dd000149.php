@@ -30,7 +30,7 @@
             <!-- Default box -->
             <div class="card card-solid">
                 <div class="card-body pb-0">
-                    <div class="row mt-5">
+                    <div class="row mt-4">
                         <?php if(request()->query('page', 1) == 1): ?>
                             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
                                 <div class="card bg-light d-flex flex-fill">
@@ -57,7 +57,7 @@
                                                 <?php $__currentLoopData = $positions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $position): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <?php if(  $manager->position_id == $position->id): ?>
                                                         <h5><b><i class="fa-regular fas fa-user-md fa-circle-user"></i>
-                                                                <?php echo e($position->name); ?></b></h5>
+                                                                <?php echo e($position->position_name); ?></b></h5>
                                                     <?php endif; ?>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <ul class=" ml-4 mb-0 fa-ul text-muted">
@@ -74,7 +74,7 @@
                                                     </li>
                                                     <li class="small"><span class="fa-li"><i
                                                                     class="fas fa-lg fa-calendar"></i></span>
-                                                        Registrasiya tarixi:
+                                                        Registrasiya:
                                                         <?php echo e($manager->created_at->format('d M Y')); ?>
 
                                                     </li>
@@ -290,7 +290,8 @@ unset($__errorArgs, $__bag); ?>"
                                                     name="position_id" required>
                                                 <option value="" disabled selected>---</option>
                                                 <?php $__currentLoopData = $positions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $position): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <option value="<?php echo e($position->id); ?>" <?php echo e(old('position_id') == $position->id ? 'selected' : ''); ?>><?php echo e($position->name); ?></option>
+                                                    <option value="<?php echo e($position->id); ?>" <?php echo e(old('position_id') == $position->id ? 'selected' : ''); ?>>
+                                                        <?php echo e($position->position_name); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </select>
                                             <?php $__errorArgs = ['position_id'];

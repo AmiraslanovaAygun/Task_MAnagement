@@ -125,10 +125,13 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                <i class="fas fa-th-large"></i>
+            <a class="nav-link btn light-mode-button rounded-circle border py-1 pt-2 px-2 mx-2" href="#" role="button"
+               id="themeToggle">
+                <i class="fas fa-toggle-off" id="themeIcon"></i> <!-- Default icon is fa-toggle-on -->
             </a>
         </li>
+
+
     </ul>
 </nav>
 

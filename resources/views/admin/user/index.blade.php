@@ -33,7 +33,7 @@
             <!-- Default box -->
             <div class="card card-solid">
                 <div class="card-body pb-0">
-                    <div class="row mt-5">
+                    <div class="row mt-4">
                         @if(request()->query('page', 1) == 1)
                             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
                                 <div class="card bg-light d-flex flex-fill">
@@ -57,7 +57,7 @@
 
                                                         <h5><b>
                                                                 <i class="fa-regular fas fa-user-md fa-circle-user"></i>
-                                                                {{$position->name}}</b></h5>
+                                                                {{$position->position_name}}</b></h5>
                                                     @endif
                                                 @endforeach
                                                 <ul class=" ml-4 mb-0 fa-ul text-muted">
@@ -72,7 +72,7 @@
                                                     </li>
                                                     <li class="small"><span class="fa-li"><i
                                                                     class="fas fa-lg fa-calendar"></i></span>
-                                                        Registrasiya tarixi:
+                                                        Registrasiya:
                                                         {{$user->created_at->format('d M Y')}}
                                                     </li>
                                                 </ul>
@@ -91,18 +91,27 @@
                                         </div>
                                     </div>
                                     <div class="card-footer">
-                                        <div class="text-right">
-                                            <button class="btn btn-sm bg-danger delete-button"
-                                                    data-id="{{ $user->id }}"
-                                                    data-url="{{ route('deleteUser', $user) }}">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
+                                        <div class="d-flex justify-content-end gap-1 ">
+                                            <div class="">
+                                                <a href="{{route('admin.userProfile',$user)}}"
+                                                   class="btn btn-sm bg-gradient-primary">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            </div>
+                                            <div class="">
+                                                <button class="btn btn-sm bg-gradient-danger delete-button"
+                                                        data-id="{{ $user->id }}"
+                                                        data-url="{{ route('deleteUser', $user) }}">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
@@ -187,7 +196,8 @@
                                                     name="position_id" required>
                                                 <option value="" disabled selected>---</option>
                                                 @foreach($positions as $position)
-                                                    <option value="{{ $position->id }}" {{ old('position_id') == $position->id ? 'selected' : '' }}>{{ $position->name }}</option>
+                                                    <option value="{{ $position->id }}" {{ old('position_id') == $position->id ? 'selected' : '' }}>
+                                                        {{ $position->position_name }}</option>
                                                 @endforeach
                                             </select>
                                             @error('position_id')

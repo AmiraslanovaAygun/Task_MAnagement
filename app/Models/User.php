@@ -27,6 +27,12 @@ class User extends Authenticatable
         'avatar',
     ];
 
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
+
+
     /**
      * The attributes that should be hidden for serialization.
      *

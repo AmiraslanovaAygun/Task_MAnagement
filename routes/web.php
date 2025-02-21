@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TaskController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -10,7 +12,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/', 'login')->name('loginPost');
     Route::get('/logout', 'logout')->name('logout');
     Route::post('/register', 'register')->name('register');
-    Route::post('/profile', 'updateProfile')->name('updateProfile');
+    Route::post('/profile/{user}', 'updateProfile')->name('updateProfile');
     Route::delete('/delete/{user}', 'destroy')->name('deleteUser');
     Route::post('/positions', 'createPosition')->name('createPosition');
     Route::delete('/positions/{position}', 'deletePosition')->name('deletePosition');
@@ -31,5 +33,14 @@ Route::name('admin.')->group(function () {
         Route::get('/managers', 'manager')->name('manager');
         Route::get('/positions', 'position')->name('position');
         Route::get('/profile', 'profile')->name('profile');
+        Route::get('/user/{user}', 'userProfile')->name('userProfile');
+
     });
+
+    Route::resource('project', ProjectController::class);
+
+    Route::resource('task', TaskController::class);
+
 });
+
+

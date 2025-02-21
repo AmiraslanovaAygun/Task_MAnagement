@@ -51,7 +51,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="text-center">
-                                                <h2><b><?php echo e($position->name); ?></b></h2>
+                                                <h2><b><?php echo e($position->position_name); ?></b></h2>
                                             </div>
 
                                         </div>
@@ -70,13 +70,7 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
-                <!-- /.card-body -->
-                
-                
-                
-                
-                
-                <!-- /.card-footer -->
+
             </div>
             <!-- /.card -->
             <div class="modal fade" id="newPositionModal" tabindex="-1" aria-labelledby="newPositionModalLabel"
@@ -95,7 +89,8 @@
                                 <div class="row">
                                     <div class="col-md-10 m-auto">
                                         <div class="form-group my-3">
-                                            <input type="text" class="form-control <?php $__errorArgs = ['name'];
+                                            <input type="text"
+                                                   class="form-control <?php $__errorArgs = ['position_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -103,11 +98,11 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                                   id="name"
-                                                   name="name"
-                                                   value="<?php echo e(old('name')); ?>"
+                                                   id="position_name"
+                                                   name="position_name"
+                                                   value="<?php echo e(old('position_name')); ?>"
                                                    required>
-                                            <?php $__errorArgs = ['name'];
+                                            <?php $__errorArgs = ['position_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -121,7 +116,9 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
 
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100">YARAT</button>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">YARAT</button>
+                                </div>
                             </form>
                         </div>
                     </div>

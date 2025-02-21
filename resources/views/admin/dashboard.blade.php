@@ -155,6 +155,82 @@
                             </div>
                             <!-- /.col -->
                         </div>
+
+                        {{--                        <div class="mb-3 p-5">--}}
+                        {{--                            <h6>İŞTİRAKÇILAR</h6>--}}
+                        {{--                            <button class="btn btn-outline-primary" onclick="openUserModal()">--}}
+                        {{--                                İstifadəçiləri idarə et--}}
+                        {{--                            </button>--}}
+                        {{--                        </div>--}}
+
+                        {{--                        <div id="userModal" class="modal fade" tabindex="-1">--}}
+                        {{--                            <div class="modal-dialog">--}}
+                        {{--                                <div class="modal-content">--}}
+                        {{--                                    <div class="modal-header">--}}
+                        {{--                                        <h5 class="modal-title">İstifadəçiləri idarə et</h5>--}}
+                        {{--                                        <button type="button" class="close" data-bs-dismiss="modal">--}}
+                        {{--                                            &times;--}}
+                        {{--                                        </button>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="modal-body">--}}
+                        {{--                                        <!-- Yeni əlavə ediləcək istifadəçilər -->--}}
+                        {{--                                        <h6>Yeni istifadəçilər</h6>--}}
+                        {{--                                        <div class="user-list-container">--}}
+                        {{--                                            <ul id="available-users" class="list-group mb-3">--}}
+                        {{--                                                @foreach($users as $user)--}}
+                        {{--                                                    @if(!in_array($user->id, $project->users->pluck('id')->toArray()))--}}
+                        {{--                                                        <li class="list-group-item d-flex justify-content-between align-items-center"--}}
+                        {{--                                                            data-user-id="{{ $user->id }}"--}}
+                        {{--                                                            data-user-name="{{ $user->name }}"--}}
+                        {{--                                                            data-user-avatar="{{ isset($user->avatar) ? Storage::url($user->avatar) : '' }}">--}}
+                        {{--                                                            {{ $user->name }}--}}
+                        {{--                                                            <button class="btn btn-sm btn-primary"--}}
+                        {{--                                                                    onclick="addUser(this)">Əlavə et--}}
+                        {{--                                                            </button>--}}
+                        {{--                                                        </li>--}}
+                        {{--                                                    @endif--}}
+                        {{--                                                @endforeach--}}
+                        {{--                                            </ul>--}}
+                        {{--                                        </div>--}}
+
+                        {{--                                        <!-- Mövcud istifadəçilər -->--}}
+                        {{--                                        <h6>Mövcud istifadəçilər</h6>--}}
+                        {{--                                        <div class="user-list-container">--}}
+                        {{--                                            <ul id="current-users" class="list-group">--}}
+                        {{--                                                @foreach($project->users as $user)--}}
+                        {{--                                                    <li class="list-group-item d-flex align-items-center justify-content-between"--}}
+                        {{--                                                        data-user-id="{{ $user->id }}">--}}
+                        {{--                                                        <div class="d-flex align-items-center">--}}
+                        {{--                                                            @if(isset($user->avatar))--}}
+                        {{--                                                                <img src="{{ Storage::url($user->avatar) }}"--}}
+                        {{--                                                                     class="rounded-circle me-2"--}}
+                        {{--                                                                     width="30" height="30">--}}
+                        {{--                                                            @else--}}
+                        {{--                                                                <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center me-2"--}}
+                        {{--                                                                     style="width: 30px; height: 30px;">--}}
+                        {{--                                                                    {{ strtoupper(substr($user->name, 0, 1)) }}--}}
+                        {{--                                                                </div>--}}
+                        {{--                                                            @endif--}}
+                        {{--                                                            <span>{{ $user->name }}</span>--}}
+                        {{--                                                        </div>--}}
+                        {{--                                                        <button class="btn btn-sm btn-danger"--}}
+                        {{--                                                                onclick="removeUser(this)">X--}}
+                        {{--                                                        </button>--}}
+                        {{--                                                        <input type="hidden" name="users[]"--}}
+                        {{--                                                               value="{{ $user->id }}">--}}
+                        {{--                                                    </li>--}}
+                        {{--                                                @endforeach--}}
+                        {{--                                            </ul>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="modal-footer">--}}
+                        {{--                                        <button type="button" class="btn btn-secondary"--}}
+                        {{--                                                data-bs-dismiss="modal">Bağla--}}
+                        {{--                                        </button>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
                         <!-- /.row -->
 
                         <!-- TABLE: LATEST ORDERS -->
